@@ -1,8 +1,8 @@
-# execute pathogen#infect()
-
 set number
-syntax on
+syntax enable
 filetype plugin indent on
 
-set background=dark
-colorscheme solarized
+# Related to solarized colorscheme
+# execute pathogen#infect()
+# set background=dark
+# colorscheme solarized
