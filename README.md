@@ -1,2 +1,2 @@
 # vim-config
-My personal .vimconfig
+Personal .vimrc for roaming
