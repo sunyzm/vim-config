@@ -1,10 +1,11 @@
 set nocompatible
+
+set number
+syntax enable
+
 set laststatus=2
 set ruler showcmd showmode
-syntax enable
-filetype plugin indent on
+set hidden
+set hlsearch incsearch
 
-"Related to solarized colorscheme
-"execute pathogen#infect()
-"set background=dark
-"colorscheme solarized
+filetype plugin indent on
