@@ -17,6 +17,9 @@ Plugin 'Valloric/YouCompleteMe'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" netrw
+Plugin 'vim-scripts/netrw.vim'
+
 " CtrlP
 Plugin 'kien/ctrlp.vim'
 
@@ -72,7 +75,7 @@ set smarttab    " insert tabs on the start of a line according to shiftwidth
 set showmatch    " set show matching parenthesis
 set title    " change the terminal's title
 set visualbell    " don't beep
-" set backspace=indent,eol,start " allow backspacing over everything in insert
+set backspace=indent,eol,start " allow backspacing over everything in insert
 
 set expandtab
 " autocmd filetype python set expandtab
@@ -80,6 +83,8 @@ set expandtab
 " statusline settings
 set laststatus=2
 set ruler showcmd showmode
+set colorcolumn=+1
+highlight ColorColumn ctermbg=darkgrey
 
 " search settings
 set hlsearch incsearch ignorecase smartcase
@@ -92,7 +97,8 @@ set pastetoggle=<F2>
 
 " highlight whitespaces
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set list listchars=tab:»\ ,trail:°
 
 " YCM settings
 let g:ycm_server_python_interpreter = '/usr/bin/python'
