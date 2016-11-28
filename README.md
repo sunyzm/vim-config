@@ -5,3 +5,8 @@
 - NERDTree: [https://github.com/scrooloose/nerdtree]
 - Syntastic: [https://github.com/vim-syntastic/syntastic]
 - fugitive: [https://github.com/tpope/vim-fugitive]
+- solarized: [https://github.com/altercation/vim-colors-solarized]
+
+## Vim Tips
+- [Highlight unwanted spaces](http://vim.wikia.com/wiki/Highlight_unwanted_spaces)
+
