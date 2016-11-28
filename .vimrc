@@ -39,6 +39,8 @@ set ruler showcmd showmode
 
 " search settings
 set hlsearch incsearch
+" Ctrl+l redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
 " YCM settings
 let g:ycm_server_python_interpreter = '/usr/bin/python'
