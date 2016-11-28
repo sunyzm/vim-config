@@ -14,6 +14,9 @@ Plugin 'VundleVim/Vundle.vim'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
+" NerdTree
+Plugin 'scrooloose/nerdtree'
+
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
@@ -37,3 +40,10 @@ set ruler showcmd showmode
 " search settings
 set hlsearch incsearch
 
+" YCM settings
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+
+" NERDTree settings
+map <C-n> :NERDTreeToggle<CR>	" open NERDTree with Ctrl+n
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
