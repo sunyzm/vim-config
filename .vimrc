@@ -17,6 +17,9 @@ Plugin 'Valloric/YouCompleteMe'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" CtrlP
+Plugin 'kien/ctrlp.vim'
+
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
@@ -38,8 +41,9 @@ filetype plugin indent on  " required
 " :PluginClean   - confirms removal of unused plugins
 " :h vundle for more details.
 
-" change the mapleader from '\' to ','
-let mapleader=","
+" key mappings
+nnoremap ; :
+let mapleader="," " change the mapleader from '\' to ','
 
 " quickly reload the vimrc file
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -80,8 +84,11 @@ set ruler showcmd showmode
 " search settings
 set hlsearch incsearch ignorecase smartcase
 
-" Ctrl+l redraws the screen and removes any search highlighting.
+" Ctrl+L redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+
+" use <F2> to toggle paste mode to avoid cascading indents
+set pastetoggle=<F2>
 
 " highlight whitespaces
 set list
@@ -94,3 +101,7 @@ let g:ycm_server_python_interpreter = '/usr/bin/python'
 map <C-n> :NERDTreeToggle<CR>	" open NERDTree with Ctrl+n
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" CtrlP settings
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Remember to run :helptags ~/.vim/bundle/ctrlp.vim/doc
