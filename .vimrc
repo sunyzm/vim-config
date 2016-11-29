@@ -76,6 +76,9 @@ set showmatch    " set show matching parenthesis
 set title    " change the terminal's title
 set visualbell    " don't beep
 set backspace=indent,eol,start " allow backspacing over everything in insert
+" set cursorline
+" set viewoptions=cursor,folds
+" set clipboard=unnamed
 
 set expandtab
 " autocmd filetype python set expandtab
