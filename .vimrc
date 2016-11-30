@@ -62,9 +62,6 @@ if &t_Co >= 256 || has("gui_running")
    colorscheme mustang
 endif
 
-" set t_Co=256
-" colorscheme primary
-
 set number
 set hidden    " See http://usevim.com/2012/10/19/vim101-set-hidden/
 set nowrap
@@ -76,8 +73,8 @@ set showmatch    " set show matching parenthesis
 set title    " change the terminal's title
 set visualbell    " don't beep
 set backspace=indent,eol,start " allow backspacing over everything in insert
+set viewoptions=cursor,folds
 " set cursorline
-" set viewoptions=cursor,folds
 " set clipboard=unnamed
 
 set expandtab
