@@ -8,8 +8,9 @@ elif [ -f "${HOME}/.vimrc" ]; then
     mv -v ${HOME}/.vimrc ${HOME}/.vimrc.backup
 fi
 
+echo "Create symlink ${HOME}/.vimrc -> ${DIR}/.vimrc"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-ln -s ${DIR}/.vimrc ~/.vimrc
+ln -s ${DIR}/.vimrc ${HOME}/.vimrc
 
 # pre-requisite
 # * YouCompleteMe: build-essential cmake python-dev python3-dev clang
@@ -20,10 +21,12 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install Vundle Plugins
 # Alternatively, launch vim and run :PluginInstall
+echo "Install Vundle plugins"
 vim +PluginInstall +qall
 
 # Compile YCM
 # * See https://valloric.github.io/YouCompleteMe/
 # * Append --gocode-completer --omnisharp-completer --tern-completer, if applicable
-~/.vim/bundle/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer
+echo "Compile YouCompleteMe with clang-completer"
+~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 

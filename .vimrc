@@ -26,14 +26,15 @@ Plugin 'kien/ctrlp.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
-" Solarized
+" color schemes
+" * Solarized
 Plugin 'altercation/vim-colors-solarized'
-" Mustang
+" * Mustang
 Plugin 'croaker/mustang-vim'
-" Minimalist 
-Plugin 'dikiaap/minimalist'
-" Google Primary colors
+" * Google Primary
 Plugin 'google/vim-colorscheme-primary'
+" * Minimalist
+" Plugin 'dikiaap/minimalist'
 
 call vundle#end()
 filetype plugin indent on  " required
@@ -44,50 +45,53 @@ filetype plugin indent on  " required
 " :PluginClean   - confirms removal of unused plugins
 " :h vundle for more details.
 
-" key mappings
 nnoremap ; :
 let mapleader="," " change the mapleader from '\' to ','
 
 " quickly reload the vimrc file
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-syntax on
-set background=dark
 
-" colorschemes settings
+""""""""""""""""""""""""
+" colorscheme settings "
+""""""""""""""""""""""""
+syntax enable
+
+let g:solarized_termcolors=256
+" set background=dark
 " colorscheme solarized
-" let g:solarized_termcolors=256
 
 if &t_Co >= 256 || has("gui_running")
-   colorscheme mustang
+  colorscheme mustang
 endif
 
+
+""""""""""""""""""
+" basic settings "
+""""""""""""""""""
 set number
-set hidden    " See http://usevim.com/2012/10/19/vim101-set-hidden/
+set hidden          " See http://usevim.com/2012/10/19/vim101-set-hidden/
 set nowrap
 set autoindent copyindent
 set tabstop=4 shiftwidth=4
-set shiftround    " use muliple of shiftwidth when indenting with < and >
-set smarttab    " insert tabs on the start of a line according to shiftwidth
-set showmatch    " set show matching parenthesis
-set title    " change the terminal's title
-set visualbell    " don't beep
+set shiftround      " use muliple of shiftwidth when indenting with < and >
+set smarttab        " insert tabs on the start of a line according to shiftwidth
+set showmatch       " set show matching parenthesis
+set title           " change the terminal's title
+set visualbell      " don't beep
 set backspace=indent,eol,start " allow backspacing over everything in insert
 set viewoptions=cursor,folds
 " set cursorline
 " set clipboard=unnamed
 
+set hlsearch incsearch ignorecase smartcase
 set expandtab
 " autocmd filetype python set expandtab
 
-" statusline settings
 set laststatus=2
 set ruler showcmd showmode
 set colorcolumn=+1
 highlight ColorColumn ctermbg=darkgrey
-
-" search settings
-set hlsearch incsearch ignorecase smartcase
 
 " Ctrl+L redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
@@ -100,6 +104,10 @@ set list
 " set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set list listchars=tab:»\ ,trail:°
 
+
+""""""""""""""""""""
+" plugins settings "
+""""""""""""""""""""
 " YCM settings
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 
