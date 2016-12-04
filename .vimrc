@@ -26,12 +26,12 @@ Plugin 'kien/ctrlp.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
-" Solarized colors
+" Solarized
 Plugin 'altercation/vim-colors-solarized'
-
-" Mustang colors
+" Mustang
 Plugin 'croaker/mustang-vim'
-
+" Minimalist 
+Plugin 'dikiaap/minimalist'
 " Google Primary colors
 Plugin 'google/vim-colorscheme-primary'
 
