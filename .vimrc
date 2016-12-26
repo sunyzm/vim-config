@@ -23,6 +23,9 @@ Plugin 'vim-scripts/netrw.vim'
 " CtrlP
 Plugin 'kien/ctrlp.vim'
 
+" Syntastic
+Plugin 'vim-syntastic/syntastic.git'
+
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
@@ -57,7 +60,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 """"""""""""""""""""""""
 syntax enable
 
-let g:solarized_termcolors=256
 " set background=dark
 " colorscheme solarized
 
@@ -73,7 +75,7 @@ set number
 set hidden          " See http://usevim.com/2012/10/19/vim101-set-hidden/
 set nowrap
 set autoindent copyindent
-set tabstop=4 shiftwidth=4
+set tabstop=4 shiftwidth=4 softtabstop=4
 set shiftround      " use muliple of shiftwidth when indenting with < and >
 set smarttab        " insert tabs on the start of a line according to shiftwidth
 set showmatch       " set show matching parenthesis
@@ -81,12 +83,12 @@ set title           " change the terminal's title
 set visualbell      " don't beep
 set backspace=indent,eol,start " allow backspacing over everything in insert
 set viewoptions=cursor,folds
+set hlsearch incsearch ignorecase smartcase
 " set cursorline
 " set clipboard=unnamed
 
-set hlsearch incsearch ignorecase smartcase
-set expandtab
-" autocmd filetype python set expandtab
+" Expand tab for python code
+autocmd filetype python set expandtab
 
 set laststatus=2
 set ruler showcmd showmode
@@ -119,3 +121,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " CtrlP settings
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Remember to run :helptags ~/.vim/bundle/ctrlp.vim/doc
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
