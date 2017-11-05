@@ -30,12 +30,10 @@ Plugin 'vim-syntastic/syntastic.git'
 Plugin 'tpope/vim-fugitive'
 
 " color schemes
-" * Solarized
-Plugin 'altercation/vim-colors-solarized'
 " * Mustang
 Plugin 'croaker/mustang-vim'
-" * Google Primary
-Plugin 'google/vim-colorscheme-primary'
+" * Solarized
+" Plugin 'altercation/vim-colors-solarized'
 " * Minimalist
 " Plugin 'dikiaap/minimalist'
 
@@ -61,7 +59,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 syntax enable
 
 " set background=dark
-" colorscheme solarized
 
 if &t_Co >= 256 || has("gui_running")
   colorscheme mustang
