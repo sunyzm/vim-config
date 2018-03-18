@@ -4,12 +4,12 @@ if [ -h "${HOME}/.vimrc" ]; then
     echo "~/.vimrc already exists, to be removed."
     rm ${HOME}/.vimrc
 elif [ -f "${HOME}/.vimrc" ]; then
-    echo "~/.vimrc already exists."
+    echo "~/.vimrc already exists; renamed to ~/.vimrc.backup."
     mv -v ${HOME}/.vimrc ${HOME}/.vimrc.backup
 fi
 
-echo "Create symlink ${HOME}/.vimrc -> ${DIR}/.vimrc"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "Create symlink ${HOME}/.vimrc -> ${DIR}/.vimrc"
 ln -s ${DIR}/.vimrc ${HOME}/.vimrc
 
 # pre-requisite packages
