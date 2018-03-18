@@ -1,14 +1,14 @@
 set nocompatible      " be iMproved, required	
 filetype off          " required
 
-" to install Vundle, run the following
+" To install Vundle, run the following:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-" set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " YouCompleteMe
@@ -61,7 +61,8 @@ syntax enable
 " set background=dark
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme mustang
+" Use slient! to ignore error at start up
+  silent! colorscheme mustang
 endif
 
 
@@ -95,10 +96,10 @@ highlight ColorColumn ctermbg=darkgrey
 " Ctrl+L redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
-" use <F2> to toggle paste mode to avoid cascading indents
+" Use <F2> to toggle paste mode to avoid cascading indents
 set pastetoggle=<F2>
 
-" highlight whitespaces
+" Highlight whitespaces
 set list
 " set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set list listchars=tab:»\ ,trail:°

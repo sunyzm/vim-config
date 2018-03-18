@@ -12,9 +12,10 @@ echo "Create symlink ${HOME}/.vimrc -> ${DIR}/.vimrc"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -s ${DIR}/.vimrc ${HOME}/.vimrc
 
-# pre-requisite
+# pre-requisite packages
+# * git
 # * YouCompleteMe: build-essential cmake python-dev python3-dev clang
-sudo apt-get install -y build-essential cmake python-dev python3-dev clang
+sudo apt-get install -y git build-essential cmake python-dev python3-dev clang
 
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -28,5 +29,5 @@ vim +PluginInstall +qall
 # * See https://valloric.github.io/YouCompleteMe/
 # * Append --gocode-completer --omnisharp-completer --tern-completer, if applicable
 echo "Compile YouCompleteMe with clang-completer"
-~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+${HOME}/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
