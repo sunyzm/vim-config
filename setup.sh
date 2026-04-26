@@ -15,7 +15,7 @@ ln -s ${DIR}/.vimrc ${HOME}/.vimrc
 # pre-requisite packages
 # * git
 # * YouCompleteMe: build-essential cmake python-dev python3-dev clang
-sudo apt-get install -y git build-essential cmake python-dev python3-dev clang
+sudo apt-get install -y git build-essential cmake python3-dev clang
 
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
